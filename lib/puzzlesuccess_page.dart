@@ -28,7 +28,7 @@ class _PuzzlesuccessPageState extends State<PuzzlesuccessPage> {
         
           Positioned.fill(
             child: Lottie.asset(
-              'lib/images/animation.json', 
+              'assets/images/animation.json', 
               fit: BoxFit.cover,
             ),
           ),
@@ -83,7 +83,7 @@ class _PuzzlesuccessPageState extends State<PuzzlesuccessPage> {
             top: MediaQuery.of(context).size.height * 0.2,
             left: MediaQuery.of(context).size.width * 0.1, 
             child: Image.asset(
-              'lib/images/kizframe.png',
+              'assets/images/kizframe.png',
               width: 80, 
               height: 80,
             ),
@@ -94,7 +94,7 @@ class _PuzzlesuccessPageState extends State<PuzzlesuccessPage> {
             bottom: 10,
             right: 10,
             child: Image.asset(
-              'lib/images/puzzleFlamingo.png', 
+              'assets/images/puzzleFlamingo.png', 
               width: 120,
               height: 200,
             ),

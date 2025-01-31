@@ -38,7 +38,7 @@ class _SignUpPageState extends State<SignUpPage> {
               Column(
                 children: [
                   Image.asset(
-                    'lib/images/logo.png', // Replace with your logo path
+                    'assets/images/logo.png', // Replace with your logo path
                     height: 200,
                   ),
                 ],
@@ -118,7 +118,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Flexible(
                     child: IconButton(
                       icon: Image.asset(
-                        'lib/images/google.png',
+                        'assets/images/google.png',
                         width: 30, // Width
                         height: 30, // Height
                         fit: BoxFit.contain, // Prevent image overflow

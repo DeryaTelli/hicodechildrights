@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     print("Tahmin Kartı butonuna tıklandı");
                   },
-                  imageUrl: 'lib/images/zurafa.png',
+                  imageUrl: 'assets/images/zurafa.png',
                 ),
                 // Puzzle
                 _buildGridButton(
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                       MaterialPageRoute(builder: (context) => SlidePuzzle()),
                     );
                   },
-                  imageUrl: 'lib/images/flamingo.png',
+                  imageUrl: 'assets/images/flamingo.png',
                 ),
                 // Resimler Arasındaki Fark
                 _buildGridButton(
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     print("Resimler Arasındaki Fark butonuna tıklandı");
                   },
-                  imageUrl: 'lib/images/yilan.png',
+                  imageUrl: 'assets/images/yilan.png',
                 ),
                 // Eşleştirme
                 _buildGridButton(
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     print("Eşleştirme butonuna tıklandı");
                   },
-                  imageUrl: 'lib/images/kus.png',
+                  imageUrl: 'assets/images/kus.png',
                 ),
               ],
             ),
@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
             bottom: 16,
             right: 16,
             child: Image.asset(
-              'lib/images/kucukkiz.png',
+              'assets/images/kucukkiz.png',
               width: 200,
               height: 250,
             ),

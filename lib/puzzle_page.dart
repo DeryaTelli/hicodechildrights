@@ -80,7 +80,7 @@ class _SlidePuzzleState extends State<SlidePuzzle> {
                             size: constraints.biggest,
                             sizePuzzle: valueSlider,
                             imageBckGround: Image(
-                              image: AssetImage("lib/images/puzzle.png"),
+                              image: AssetImage("assets/images/puzzle.png"),
                             ),
                           ),
                         );
@@ -110,7 +110,7 @@ class _SlidePuzzleState extends State<SlidePuzzle> {
                 bottom: 10,
                 right: 0,
                 child: Image.asset(
-                  'lib/images/puzzleFlamingo1.png',
+                  'assets/images/puzzleFlamingo1.png',
                   width: 120,
                   height: 150,
                 ),
