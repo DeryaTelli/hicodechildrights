@@ -1,16 +1,5 @@
-# hicodechildrights
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h1> Hi-Kod 5 Mobil Uygulama Geliştirme Atölyesi </h1>
+<h1> Çocukhane Mobil Uygulaması </h1>
+<h2> Uygulama Amacı </h2>
+<p>“Çocukhane, çocuklara temel haklarını eğlenceli ve etkileşimli oyunlar aracılığıyla öğretmeyi amaçlamaktadır. Çocuklar puzzle, kart eşleştirme, fark bulma gibi oyunlarla, kendi haklarını keşfederken bilinçlenir ve haklarını savunma konusunda farkındalık kazanır. Eğitici ve interaktif yapısıyla öğrenmeyi kalıcı hale getiren bu uygulama, çocukların bilişsel ve sosyal gelişimine katkı sağlayarak onları daha bilinçli bireyler olarak yetiştirmeyi hedefler.”</p>
