@@ -29,6 +29,9 @@ Aileler ve ebeveynler
 <p>Esra Arıkan</p>
 <p>Mustafa Arslan</p>
 
+## Uygulama Sunum
+https://www.canva.com/design/DAGdyNSPUZ0/opYwDrqSeFofgaHH9ceG2w/edit?utm_content=DAGdyNSPUZ0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 ## Uygulamanın Figma Tasarımı 
 ![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20003247.png)
 
