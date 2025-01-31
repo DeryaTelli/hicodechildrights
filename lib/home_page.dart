@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hicodechildrights/anasayfa.dart';
 import 'package:hicodechildrights/color.dart';
+import 'package:hicodechildrights/log_in.dart';
 import 'package:hicodechildrights/puzzle_page.dart';
 import 'package:hicodechildrights/screens/matchingGameScreen.dart';
 import 'package:hicodechildrights/tahminanasayfa.dart';
@@ -26,7 +28,40 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      drawer: const Drawer(), // Menü simgesi için bir çekmece
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            // Drawer Header
+            UserAccountsDrawerHeader(
+              accountName:
+                  Text(FirebaseAuth.instance.currentUser?.email ?? "Guest"),
+              accountEmail: Text(
+                  FirebaseAuth.instance.currentUser?.displayName ??
+                      "Kullanıcı"),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Icon(
+                  Icons.person,
+                  color: Colors.blue,
+                ),
+              ),
+            ),
+            // Log Out Button
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Çıkış Yap'),
+              onTap: () async {
+                await FirebaseAuth.instance.signOut();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LogInPage()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: [
           Padding(
@@ -36,7 +71,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisSpacing: 16.0,
               mainAxisSpacing: 16.0,
               children: [
-                // Tahmin Kartı
+                // Your existing buttons here
                 _buildGridButton(
                   context,
                   color: Colors.pink[100]!,
@@ -50,7 +85,6 @@ class _HomePageState extends State<HomePage> {
                   },
                   imageUrl: 'assets/images/zurafa.png',
                 ),
-                // Puzzle
                 _buildGridButton(
                   context,
                   color: Colors.purple[100]!,
@@ -64,7 +98,6 @@ class _HomePageState extends State<HomePage> {
                   },
                   imageUrl: 'assets/images/flamingo.png',
                 ),
-                // Resimler Arasındaki Fark
                 _buildGridButton(
                   context,
                   color: Colors.grey[300]!,
@@ -78,7 +111,6 @@ class _HomePageState extends State<HomePage> {
                   },
                   imageUrl: 'assets/images/yilan.png',
                 ),
-                // Eşleştirme
                 _buildGridButton(
                   context,
                   color: Colors.green[100]!,
@@ -96,7 +128,6 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          // Ekranın alt sağ köşesine fotoğraf eklemek için Positioned widget'ı
           Positioned(
             bottom: 16,
             right: 16,
@@ -128,7 +159,6 @@ class _HomePageState extends State<HomePage> {
         ),
         child: Column(
           children: [
-            // Üst taraf: İkon ve yazı
             Expanded(
               flex: 2,
               child: Center(
@@ -153,7 +183,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            // Alt taraf: Küçük fotoğraf
             Expanded(
               flex: 1,
               child: ClipRRect(
@@ -161,12 +190,12 @@ class _HomePageState extends State<HomePage> {
                   bottom: Radius.circular(16),
                 ),
                 child: Align(
-                  alignment: Alignment.centerRight, // Sağ hizalama için ayar
+                  alignment: Alignment.centerRight,
                   child: Image.asset(
                     imageUrl,
                     fit: BoxFit.cover,
-                    width: 45, // Genişlik ayarı
-                    height: 45, // Yükseklik ayarı
+                    width: 45,
+                    height: 45,
                   ),
                 ),
               ),

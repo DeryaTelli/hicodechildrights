@@ -3,7 +3,6 @@ import 'package:hicodechildrights/button.dart';
 import 'package:hicodechildrights/color.dart';
 import 'package:hicodechildrights/forgot_password.dart';
 import 'package:hicodechildrights/home_page.dart';
-import 'package:hicodechildrights/otp_verification.dart';
 import 'package:hicodechildrights/services/auth_service.dart';
 import 'package:hicodechildrights/sign_up.dart';
 
@@ -15,6 +14,9 @@ class LogInPage extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LogInPage> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +50,7 @@ class _LogInPageState extends State<LogInPage> {
               const SizedBox(height: 30),
               // Email Field
               TextField(
+                controller: _emailController,
                 decoration: InputDecoration(
                   labelText: 'Email',
                   hintText: 'Email adresinizi yazın',
@@ -59,6 +62,7 @@ class _LogInPageState extends State<LogInPage> {
               const SizedBox(height: 20),
               // Password Field
               TextField(
+                controller: _passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Şifre',
@@ -68,7 +72,6 @@ class _LogInPageState extends State<LogInPage> {
                   ),
                 ),
               ),
-
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
@@ -99,8 +102,8 @@ class _LogInPageState extends State<LogInPage> {
                 onPressed: () async {
                   final authService = AuthService();
                   final userCredential = await authService.signin(
-                    'email@example.com',
-                    'password',
+                    _emailController.text,
+                    _passwordController.text,
                     context,
                   );
                   if (userCredential != null) {

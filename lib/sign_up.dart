@@ -14,6 +14,10 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +50,7 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(height: 5),
               // Email Field
               TextField(
+                controller: _emailController,
                 decoration: InputDecoration(
                   labelText: 'Email',
                   hintText: 'Email adresinizi yazın',
@@ -57,6 +62,7 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(height: 10),
               // Password Field
               TextField(
+                controller: _passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Şifre',
@@ -69,6 +75,7 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(height: 10),
               // Confirm Password Field
               TextField(
+                controller: _confirmPasswordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Şifre Tekrarı',
@@ -84,17 +91,35 @@ class _SignUpPageState extends State<SignUpPage> {
                 text: 'Kayıt Ol',
                 onPressed: () async {
                   final authService = AuthService();
+                  final email = _emailController.text.trim();
+                  final password = _passwordController.text.trim();
+                  final confirmPassword =
+                      _confirmPasswordController.text.trim();
+
+                  if (email.isEmpty ||
+                      password.isEmpty ||
+                      confirmPassword.isEmpty) {
+                    _showErrorMessage(context, "Lütfen tüm alanları doldurun.");
+                    return;
+                  }
+
                   final userCredential = await authService.signup(
-                    'email@example.com',
-                    'password',
-                    'password',
+                    email,
+                    password,
+                    confirmPassword,
                     context,
                   );
+
                   if (userCredential != null) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LogInPage()),
-                    );
+                    // Kayıt işlemi başarılıysa giriş yapalım
+                    final signInCredential =
+                        await authService.signin(email, password, context);
+                    if (signInCredential != null) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LogInPage()),
+                      );
+                    }
                   }
                 },
               ),
@@ -137,7 +162,6 @@ class _SignUpPageState extends State<SignUpPage> {
                       },
                     ),
                   ),
-                  // const SizedBox(width: 20),
                 ],
               ),
               const SizedBox(height: 20),
@@ -176,6 +200,16 @@ class _SignUpPageState extends State<SignUpPage> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  // Hata mesajı gösterme fonksiyonu
+  void _showErrorMessage(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        backgroundColor: Colors.red,
       ),
     );
   }

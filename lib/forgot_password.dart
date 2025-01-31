@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hicodechildrights/button.dart';
 import 'package:hicodechildrights/color.dart';
+import 'package:hicodechildrights/services/auth_service.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
@@ -10,6 +11,8 @@ class ForgotPasswordPage extends StatefulWidget {
 }
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
+  final _auth = AuthService();
+  final _email = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +39,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             ),
             const SizedBox(height: 20),
             TextField(
+              controller: _email,
               decoration: InputDecoration(
                 labelText: 'Email',
                 hintText: 'Email adresinizi yazın',
@@ -46,9 +50,13 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             ),
             const SizedBox(height: 30),
             GradientButton(
-              text: 'Onayla',
+              text: 'Send Email',
               onPressed: () {
-                print('Log In button pressed');
+                _auth.sendPasswordResetLink(_email.text);
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text(
+                        'Şifre sıfırlama linki email adresinize gönderildi')));
+                Navigator.pop(context);
               },
             ),
           ],

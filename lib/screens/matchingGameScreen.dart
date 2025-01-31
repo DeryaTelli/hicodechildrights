@@ -29,9 +29,7 @@ class _MatchingGameScreenState extends State<MatchingGameScreen> {
   }
 
   void flipCard(int index) {
-    if (isMatched[index] || isFlipped[index]) {
-      return;
-    }
+    if (isMatched[index] || isFlipped[index]) return;
 
     setState(() {
       isFlipped[index] = true;
@@ -70,12 +68,8 @@ class _MatchingGameScreenState extends State<MatchingGameScreen> {
 
   void onFinishButtonPressed() {
     if (checkGameCompleted()) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => MatchingGameSuccesScreen(),
-        ),
-      );
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => MatchingGameSuccesScreen()));
     }
   }
 
@@ -91,9 +85,7 @@ class _MatchingGameScreenState extends State<MatchingGameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Eşleştirme',
-        ),
+        title: const Text('Eşleştirme'),
         foregroundColor: Colors.white,
         centerTitle: true,
         flexibleSpace: Container(
@@ -102,118 +94,99 @@ class _MatchingGameScreenState extends State<MatchingGameScreen> {
           ),
         ),
       ),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          double width = constraints.maxWidth;
-          double hight = constraints.maxHeight;
-          double cardSize = (width < 500)
-              ? width / 3.5 // Mobil için ayar
-              : width / 4; // Büyük ekran için ayar
-
-          double birdSize = (width < 500)
-              ? width / 2.5 // Mobil için ayar
-              : width / 4;
-
-          return Stack(
+      body: Stack(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SizedBox(
-                    height: cardSize * 2.5,
-                    child: GridView.builder(
-                      physics: NeverScrollableScrollPhysics(),
-                      padding: EdgeInsets.all(20),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        childAspectRatio: width < 500 ? 0.9 : 1,
-                        crossAxisSpacing: 20,
-                        mainAxisSpacing: 20,
-                      ),
-                      itemCount: cardData.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          onTap: () => flipCard(index),
-                          child: AnimatedSwitcher(
-                            duration: Duration(milliseconds: 300),
-                            child: isFlipped[index]
-                                ? Container(
-                                    width: cardSize,
-                                    height: cardSize,
-                                    color: Color(0xFF4EE292),
-                                    child: Column(
-                                      children: [
-                                        Image.asset(
-                                          cardData[index]["image"]!,
-                                          key: ValueKey(index),
-                                          width: cardSize * 0.8,
-                                          height: cardSize * 0.8,
-                                        ),
-                                        Text(
-                                          cardData[index]["text"]!,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w400,
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.width * 1.0,
+                      child: GridView.builder(
+                        physics: NeverScrollableScrollPhysics(),
+                        padding: EdgeInsets.all(20),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          childAspectRatio: 1.0,
+                          crossAxisSpacing: 20,
+                          mainAxisSpacing: 20,
+                        ),
+                        itemCount: cardData.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () => flipCard(index),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xFF4EE292),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Center(
+                                child: isFlipped[index]
+                                    ? Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Image.asset(
+                                            cardData[index]["image"]!,
+                                            width: 60,
+                                            height: 60,
                                           ),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                                : Container(
-                                    width: cardSize,
-                                    height: cardSize,
-                                    color: Color(0xFF4EE292),
-                                    child: Center(
-                                      child: Image.asset(
-                                          "assets/images/Vector.png"),
-                                    ),
-                                  ),
-                          ),
-                        );
-                      },
+                                          Text(
+                                            cardData[index]["text"]!,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ],
+                                      )
+                                    : Image.asset("assets/images/Vector.png"),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        child: GradientButton1(
-                          width: width * 0.25,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        GradientButton1(
+                          width: 100,
                           text: "Bitir",
                           onPressed: onFinishButtonPressed,
                           borderRadius: 12,
                         ),
-                      ),
-                      SizedBox(width: 10),
-                      Flexible(
-                        child: GradientButton1(
-                          width: width * 0.25,
+                        SizedBox(width: 10),
+                        GradientButton1(
+                          width: 100,
                           text: "Temizle",
                           onPressed: onClearButtonPressed,
                           borderRadius: 12,
                         ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: hight * 0.02,
-                  )
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
-              Positioned(
-                bottom: hight * 0.02,
-                right: width * 0.02,
-                child: Image.asset(
-                  'assets/images/bird.png',
-                  width: birdSize,
-                  height: birdSize,
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Image.asset(
+                    'assets/images/bird.png',
+                    width: 100,
+                    height: 100,
+                  ),
                 ),
               ),
             ],
-          );
-        },
+          ),
+        ],
       ),
     );
   }

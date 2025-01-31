@@ -3,9 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
-
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  Future<void> sendPasswordResetLink(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } catch (e) {
+      print(e.toString());
+    }
+  }
 
   Future<UserCredential?> signup(String email, String password,
       String confirmPassword, BuildContext context) async {
@@ -35,8 +41,10 @@ class AuthService {
     }
   }
 
-    Future<UserCredential?> signin(String email, String password, BuildContext context) async {
+  Future<UserCredential?> signin(
+      String email, String password, BuildContext context) async {
     try {
+      // Kullanıcı girişi denemesi
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
         email: email,
         password: password,
@@ -56,12 +64,13 @@ class AuthService {
     }
   }
 
-    Future<UserCredential?> signInWithGoogle(BuildContext context) async {
+  Future<UserCredential?> signInWithGoogle(BuildContext context) async {
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
       if (googleUser == null) return null;
 
-      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
       final AuthCredential credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
@@ -95,7 +104,6 @@ class AuthService {
       return null;
     }
   }
-
 
   void _showErrorMessage(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(

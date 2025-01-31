@@ -35,7 +35,7 @@ class _MatchingGameSuccesScreenState extends State<MatchingGameSuccesScreen> {
           Center(
             child: Container(
               width: MediaQuery.of(context).size.width * 0.8,
-              height: 250,
+              height: 218,
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Color(0xFF4EE292),
@@ -68,7 +68,7 @@ class _MatchingGameSuccesScreenState extends State<MatchingGameSuccesScreen> {
                     child: Text(
                       "Çocuklar oyun oynama, dinlenme ve eğlenme hakkını özgürce kullanabilirler.",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.w400,
                         color: Colors.black87,
                       ),

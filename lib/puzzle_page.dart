@@ -435,10 +435,8 @@ class _SlidePuzzleWidgetState extends State<SlidePuzzleWidget> {
         finishSwap) {
       print("Success");
       success = true;
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => PuzzlesuccessPage()),
-      );
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => PuzzlesuccessPage()));
     } else {
       success = false;
     }
