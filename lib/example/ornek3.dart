@@ -13,7 +13,7 @@ class Ornek3 extends StatelessWidget {
           backgroundColor: Color(0xFFB566F2),
           foregroundColor: Colors.white,
         ),
-        body: Resim(500, "assets/resim3.jpg"));
+        body: Resim(500, "assets/images/resim3.jpg"));
   }
 }
 

@@ -146,7 +146,7 @@ class _AnasayfaState extends State<Anasayfa> {
                   height: ekranYukseklik * 0.03,
                 ),
                 Image.asset(
-                  "assets/cocuklarresim.png",
+                  "assets/images/cocuklarresim.png",
                   height: ekranYukseklik * 0.2,
                   width: ekranGenislik * 0.9,
                 ),

@@ -108,7 +108,7 @@ class _TahminanasayfaState extends State<Tahminanasayfa> {
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: Image.asset(
-                    "assets/zurafa.png",
+                    "assets/images/zurafa.png",
                     width: ekranGenislik * 0.3,
                   ),
                 ),

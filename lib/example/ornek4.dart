@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hicodechildrights/result/sonucsayfasi4.dart';
+
 class Ornek4 extends StatelessWidget {
   const Ornek4({super.key});
 
@@ -12,7 +13,7 @@ class Ornek4 extends StatelessWidget {
           backgroundColor: Color(0xFFB566F2),
           foregroundColor: Colors.white,
         ),
-        body: Resim(500, "assets/resim4.jpg"));
+        body: Resim(500, "assets/images/resim4.jpg"));
   }
 }
 

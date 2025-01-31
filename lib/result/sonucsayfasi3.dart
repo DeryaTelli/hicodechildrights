@@ -27,7 +27,7 @@ class _SonucsayfasiState extends State<Sonucsayfasi3> {
         children: [
           Positioned.fill(
             child: Lottie.asset(
-              'assets/Animation.json',
+              'assets/animation.json',
               fit: BoxFit.cover,
             ),
           ),
@@ -78,7 +78,7 @@ class _SonucsayfasiState extends State<Sonucsayfasi3> {
             top: MediaQuery.of(context).size.height * 0.2,
             left: MediaQuery.of(context).size.width * 0.1,
             child: Image.asset(
-              'assets/kizresmi.png',
+              'assets/images/kizframe.png',
               width: 80,
               height: 80,
             ),
@@ -87,7 +87,7 @@ class _SonucsayfasiState extends State<Sonucsayfasi3> {
             bottom: 10,
             right: 10,
             child: Image.asset(
-              'assets/zurafa3.png',
+              'assets/images/zurafa3.png',
               width: 120,
               height: 200,
             ),
