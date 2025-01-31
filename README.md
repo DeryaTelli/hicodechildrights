@@ -28,3 +28,25 @@ Aileler ve ebeveynler
 <p>Derya Telli</p>
 <p>Esra Arıkan</p>
 <p>Mustafa Arslan</p>
+
+## Uygulamanın Figma Tasarımı 
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20003247.png)
+
+## Uygulama
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001054.png)
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001106.png)
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001113.png)
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001123.png)
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001130.png)
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001139.png)
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001149.png)
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001206.png)
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001220.png)
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001235.png)
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001247.png)
+![image](https://github.com/DeryaTelli/hicodechildrights/blob/main/assets/screenshot/Screenshot%202025-02-01%20001301.png)
+
+
+
+
+
