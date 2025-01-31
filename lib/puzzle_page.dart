@@ -255,7 +255,7 @@ class _SlidePuzzleWidgetState extends State<SlidePuzzleWidget> {
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   onPressed: () => generatePuzzle(),
-                  child: Text("Generate",
+                  child: Text("Oluştur",
                       style: TextStyle(color: AppColors.purple)),
                 ),
               ),
@@ -263,7 +263,7 @@ class _SlidePuzzleWidgetState extends State<SlidePuzzleWidget> {
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   onPressed: startSlide ? null : () => reversePuzzle(),
-                  child: Text("Reverse",
+                  child: Text("Geri Al",
                       style: TextStyle(color: AppColors.purple)),
                 ),
               ),
@@ -271,8 +271,8 @@ class _SlidePuzzleWidgetState extends State<SlidePuzzleWidget> {
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   onPressed: () => clearPuzzle(),
-                  child:
-                      Text("Clear", style: TextStyle(color: AppColors.purple)),
+                  child: Text("Temizle",
+                      style: TextStyle(color: AppColors.purple)),
                 ),
               )
             ],
