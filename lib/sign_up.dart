@@ -126,7 +126,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       iconSize: 40,
                       onPressed: () async {
                         final authService = AuthService();
-                        final userCredential = await authService.signInWithGoogle(context);
+                        final userCredential =
+                            await authService.signInWithGoogle(context);
                         if (userCredential != null) {
                           Navigator.push(
                             context,
@@ -136,28 +137,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       },
                     ),
                   ),
-                  const SizedBox(width: 20),
-                  Flexible(
-                    child: IconButton(
-                      icon: Image.asset(
-                        'lib/images/apple.png',
-                        width: 60, // Width
-                        height: 60, // Height
-                        fit: BoxFit.contain, // Prevent image overflow
-                      ),
-                      iconSize: 40,
-                        onPressed: () async {
-                        final authService = AuthService();
-                        final userCredential = await authService.signInWithApple(context);
-                        if (userCredential != null) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => HomePage()),
-                          );
-                        }
-                      },
-                    ),
-                  ),
+                  // const SizedBox(width: 20),
                 ],
               ),
               const SizedBox(height: 20),
