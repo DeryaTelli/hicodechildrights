@@ -42,15 +42,16 @@ class _ResimState extends State<Resim> {
   Color renk5 = Colors.transparent;
   Color renk6 = Colors.transparent;
   Color renk7 = Colors.transparent;
-  /*
-  Color renk1 = Colors.red;
-  Color renk2 = Colors.blue;
-  Color renk3 = Colors.yellowAccent;
-  Color renk4 = Colors.green;
-  Color renk5 = Colors.greenAccent;
-  Color renk6 = Colors.brown;
-  Color renk7 = Colors.purple;
-  */
+
+  // Farkların tıklanıp tıklanmadığını kontrol etmek için boolean değişkenler
+  bool tiklanmis1 = false;
+  bool tiklanmis2 = false;
+  bool tiklanmis3 = false;
+  bool tiklanmis4 = false;
+  bool tiklanmis5 = false;
+  bool tiklanmis6 = false;
+  bool tiklanmis7 = false;
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -78,16 +79,23 @@ class _ResimState extends State<Resim> {
                       top: resimYukseklik * 0.015,
                       child: GestureDetector(
                         onTap: () {
-                          setState(() {
-                            sayac++;
+                          if (!tiklanmis1) {
+                            // Eğer bu fark tıklanmamışsa
+                            setState(() {
+                              sayac++;
+                              tiklanmis1 =
+                                  true; // Bu farkı tıklanmış olarak işaretle
+                              renk1 = Colors.yellow;
+                            });
                             print("sayac: $sayac");
-                            renk1 = Colors.yellow;
-                          });
-                          if (sayac == 7) {
-                            Navigator.pushReplacement(
+                            if (sayac == 7) {
+                              Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Sonucsayfasi2()));
+                                  builder: (context) => Sonucsayfasi2(),
+                                ),
+                              );
+                            }
                           }
                         },
                         child: Container(
@@ -102,16 +110,23 @@ class _ResimState extends State<Resim> {
                       top: resimYukseklik * 0.015,
                       child: GestureDetector(
                         onTap: () {
-                          setState(() {
-                            sayac++;
+                          if (!tiklanmis2) {
+                            // Eğer bu fark tıklanmamışsa
+                            setState(() {
+                              sayac++;
+                              tiklanmis2 =
+                                  true; // Bu farkı tıklanmış olarak işaretle
+                              renk2 = Colors.yellow;
+                            });
                             print("sayac: $sayac");
-                            renk2 = Colors.yellow;
-                          });
-                          if (sayac == 7) {
-                            Navigator.pushReplacement(
+                            if (sayac == 7) {
+                              Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Sonucsayfasi2()));
+                                  builder: (context) => Sonucsayfasi2(),
+                                ),
+                              );
+                            }
                           }
                         },
                         child: Container(
@@ -126,16 +141,23 @@ class _ResimState extends State<Resim> {
                         top: resimYukseklik * 0.235,
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              sayac++;
+                            if (!tiklanmis3) {
+                              // Eğer bu fark tıklanmamışsa
+                              setState(() {
+                                sayac++;
+                                tiklanmis3 =
+                                    true; // Bu farkı tıklanmış olarak işaretle
+                                renk3 = Colors.yellow;
+                              });
                               print("sayac: $sayac");
-                              renk3 = Colors.yellow;
-                            });
-                            if (sayac == 7) {
-                              Navigator.pushReplacement(
+                              if (sayac == 7) {
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Sonucsayfasi2()));
+                                    builder: (context) => Sonucsayfasi2(),
+                                  ),
+                                );
+                              }
                             }
                           },
                           child: Container(
@@ -149,16 +171,23 @@ class _ResimState extends State<Resim> {
                         top: resimYukseklik * 0.245,
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              sayac++;
+                            if (!tiklanmis4) {
+                              // Eğer bu fark tıklanmamışsa
+                              setState(() {
+                                sayac++;
+                                tiklanmis4 =
+                                    true; // Bu farkı tıklanmış olarak işaretle
+                                renk4 = Colors.yellow;
+                              });
                               print("sayac: $sayac");
-                              renk4 = Colors.yellow;
-                            });
-                            if (sayac == 7) {
-                              Navigator.pushReplacement(
+                              if (sayac == 7) {
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Sonucsayfasi2()));
+                                    builder: (context) => Sonucsayfasi2(),
+                                  ),
+                                );
+                              }
                             }
                           },
                           child: Container(
@@ -172,16 +201,23 @@ class _ResimState extends State<Resim> {
                         top: resimYukseklik * 0.325,
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              sayac++;
+                            if (!tiklanmis5) {
+                              // Eğer bu fark tıklanmamışsa
+                              setState(() {
+                                sayac++;
+                                tiklanmis5 =
+                                    true; // Bu farkı tıklanmış olarak işaretle
+                                renk5 = Colors.yellow;
+                              });
                               print("sayac: $sayac");
-                              renk5 = Colors.yellow;
-                            });
-                            if (sayac == 7) {
-                              Navigator.pushReplacement(
+                              if (sayac == 7) {
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Sonucsayfasi2()));
+                                    builder: (context) => Sonucsayfasi2(),
+                                  ),
+                                );
+                              }
                             }
                           },
                           child: Container(
@@ -195,16 +231,23 @@ class _ResimState extends State<Resim> {
                         top: resimYukseklik * 0.32,
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              sayac++;
+                            if (!tiklanmis6) {
+                              // Eğer bu fark tıklanmamışsa
+                              setState(() {
+                                sayac++;
+                                tiklanmis6 =
+                                    true; // Bu farkı tıklanmış olarak işaretle
+                                renk6 = Colors.yellow;
+                              });
                               print("sayac: $sayac");
-                              renk6 = Colors.yellow;
-                            });
-                            if (sayac == 7) {
-                              Navigator.pushReplacement(
+                              if (sayac == 7) {
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Sonucsayfasi2()));
+                                    builder: (context) => Sonucsayfasi2(),
+                                  ),
+                                );
+                              }
                             }
                           },
                           child: Container(
@@ -218,16 +261,23 @@ class _ResimState extends State<Resim> {
                         top: resimYukseklik * 0.37,
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              sayac++;
+                            if (!tiklanmis7) {
+                              // Eğer bu fark tıklanmamışsa
+                              setState(() {
+                                sayac++;
+                                tiklanmis7 =
+                                    true; // Bu farkı tıklanmış olarak işaretle
+                                renk7 = Colors.yellow;
+                              });
                               print("sayac: $sayac");
-                              renk7 = Colors.yellow;
-                            });
-                            if (sayac == 7) {
-                              Navigator.pushReplacement(
+                              if (sayac == 7) {
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Sonucsayfasi2()));
+                                    builder: (context) => Sonucsayfasi2(),
+                                  ),
+                                );
+                              }
                             }
                           },
                           child: Container(

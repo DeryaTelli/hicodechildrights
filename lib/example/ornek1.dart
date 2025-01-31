@@ -33,15 +33,9 @@ class Resim extends StatefulWidget {
 
 class _ResimState extends State<Resim> {
   var sayac = 0;
-  /*
-  Color renk1 = Colors.red;
-  Color renk2 = Colors.blue;
-  Color renk3 = Colors.yellowAccent;
-  Color renk4 = Colors.green;
-  Color renk5 = Colors.greenAccent;
-  Color renk6 = Colors.brown;
-  Color renk7 = Colors.purple;
-  */
+  // Farkların tıklanıp tıklanmadığını takip eden değişkenler
+  List<bool> farklar = List.generate(7, (_) => false);
+
   Color renk1 = Colors.transparent;
   Color renk2 = Colors.transparent;
   Color renk3 = Colors.transparent;
@@ -72,16 +66,20 @@ class _ResimState extends State<Resim> {
                         fit: BoxFit.fill,
                       ),
                     ),
+                    // 1. Fark
                     Positioned(
                       left: resimGenislik * 0.15,
                       top: resimYukseklik * 0.13,
                       child: GestureDetector(
                         onTap: () {
-                          setState(() {
-                            sayac++;
-                            print("sayac: $sayac");
-                            renk1 = Colors.yellow;
-                          });
+                          if (!farklar[0]) {
+                            setState(() {
+                              farklar[0] = true; // Farkı işaretle
+                              renk1 =
+                                  Colors.yellow; // Tıklanan farkı sarıya boya
+                              sayac++;
+                            });
+                          }
                           if (sayac == 7) {
                             Navigator.pushReplacement(
                                 context,
@@ -96,16 +94,19 @@ class _ResimState extends State<Resim> {
                         ),
                       ),
                     ),
+                    // 2. Fark
                     Positioned(
                       left: resimGenislik * 0.47,
                       top: resimYukseklik * 0.015,
                       child: GestureDetector(
                         onTap: () {
-                          setState(() {
-                            sayac++;
-                            print("sayac: $sayac");
-                            renk2 = Colors.yellow;
-                          });
+                          if (!farklar[1]) {
+                            setState(() {
+                              farklar[1] = true;
+                              renk2 = Colors.yellow;
+                              sayac++;
+                            });
+                          }
                           if (sayac == 7) {
                             Navigator.pushReplacement(
                                 context,
@@ -120,16 +121,19 @@ class _ResimState extends State<Resim> {
                         ),
                       ),
                     ),
+                    // 3. Fark
                     Positioned(
                         left: resimGenislik * 0.76,
                         top: resimYukseklik * 0.23,
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              sayac++;
-                              print("sayac: $sayac");
-                              renk3 = Colors.yellow;
-                            });
+                            if (!farklar[2]) {
+                              setState(() {
+                                farklar[2] = true;
+                                renk3 = Colors.yellow;
+                                sayac++;
+                              });
+                            }
                             if (sayac == 7) {
                               Navigator.pushReplacement(
                                   context,
@@ -143,16 +147,19 @@ class _ResimState extends State<Resim> {
                             color: renk3,
                           ),
                         )),
+                    // 4. Fark
                     Positioned(
                         left: resimGenislik * 0.49,
                         top: resimYukseklik * 0.2,
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              sayac++;
-                              print("sayac: $sayac");
-                              renk4 = Colors.yellow;
-                            });
+                            if (!farklar[3]) {
+                              setState(() {
+                                farklar[3] = true;
+                                renk4 = Colors.yellow;
+                                sayac++;
+                              });
+                            }
                             if (sayac == 7) {
                               Navigator.pushReplacement(
                                   context,
@@ -166,16 +173,19 @@ class _ResimState extends State<Resim> {
                             color: renk4,
                           ),
                         )),
+                    // 5. Fark
                     Positioned(
                         left: resimGenislik * 0.24,
                         top: resimYukseklik * 0.35,
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              sayac++;
-                              print("sayac: $sayac");
-                              renk5 = Colors.yellow;
-                            });
+                            if (!farklar[4]) {
+                              setState(() {
+                                farklar[4] = true;
+                                renk5 = Colors.yellow;
+                                sayac++;
+                              });
+                            }
                             if (sayac == 7) {
                               Navigator.pushReplacement(
                                   context,
@@ -189,16 +199,19 @@ class _ResimState extends State<Resim> {
                             color: renk5,
                           ),
                         )),
+                    // 6. Fark
                     Positioned(
                         left: resimGenislik * 0.41,
                         top: resimYukseklik * 0.35,
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              sayac++;
-                              print("sayac: $sayac");
-                              renk6 = Colors.yellow;
-                            });
+                            if (!farklar[5]) {
+                              setState(() {
+                                farklar[5] = true;
+                                renk6 = Colors.yellow;
+                                sayac++;
+                              });
+                            }
                             if (sayac == 7) {
                               Navigator.pushReplacement(
                                   context,
@@ -212,16 +225,19 @@ class _ResimState extends State<Resim> {
                             color: renk6,
                           ),
                         )),
+                    // 7. Fark
                     Positioned(
                         left: resimGenislik * 0.14,
                         top: resimYukseklik * 0.30,
                         child: GestureDetector(
                           onTap: () {
-                            setState(() {
-                              sayac++;
-                              print("sayac: $sayac");
-                              renk7 = Colors.yellow;
-                            });
+                            if (!farklar[6]) {
+                              setState(() {
+                                farklar[6] = true;
+                                renk7 = Colors.yellow;
+                                sayac++;
+                              });
+                            }
                             if (sayac == 7) {
                               Navigator.pushReplacement(
                                   context,
