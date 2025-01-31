@@ -4,6 +4,7 @@ import 'package:hicodechildrights/firebase_options.dart';
 import 'package:hicodechildrights/forgot_password.dart';
 import 'package:hicodechildrights/log_in.dart';
 import 'package:hicodechildrights/otp_verification.dart';
+import 'package:hicodechildrights/screens/splashScreen.dart';
 import 'package:hicodechildrights/sign_up.dart';
 
 Future<void> main() async{
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LogInPage(),
+      home: SplashScreen(),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hicodechildrights/anasayfa.dart';
 import 'package:hicodechildrights/color.dart';
 import 'package:hicodechildrights/puzzle_page.dart';
+import 'package:hicodechildrights/screens/matchingGameScreen.dart';
 import 'package:hicodechildrights/tahminanasayfa.dart';
 
 class HomePage extends StatefulWidget {
@@ -84,7 +85,11 @@ class _HomePageState extends State<HomePage> {
                   icon: Icons.music_note,
                   label: 'Eşleştirme',
                   onTap: () {
-                    print("Eşleştirme butonuna tıklandı");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MatchingGameScreen()),
+                    );
                   },
                   imageUrl: 'assets/images/kus.png',
                 ),
