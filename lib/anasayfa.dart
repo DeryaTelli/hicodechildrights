@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hicodechildrights/color.dart';
 import 'package:hicodechildrights/example/ornek1.dart';
 import 'package:hicodechildrights/example/ornek2.dart';
 import 'package:hicodechildrights/example/ornek3.dart';
@@ -19,10 +20,14 @@ class _AnasayfaState extends State<Anasayfa> {
     double ekranGenislik = ekran.size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Resimler Arasındaki Fark"),
-        centerTitle: true,
-        backgroundColor: Color(0xFFB566F2),
+        title: const Text('Resimler Arasındaki Fark'),
         foregroundColor: Colors.white,
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: AppGradients.primaryGradient,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -35,7 +40,7 @@ class _AnasayfaState extends State<Anasayfa> {
               children: [
                 SizedBox(
                   width: ekranGenislik * 0.7,
-                  height: ekranYukseklik * 0.1,
+                  height: ekranYukseklik * 0.07,
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
@@ -52,10 +57,10 @@ class _AnasayfaState extends State<Anasayfa> {
                       style: TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFF554547A),
+                        backgroundColor: AppColors.color1,
                         foregroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30))),
+                            borderRadius: BorderRadius.circular(18))),
                   ),
                 ),
                 SizedBox(
@@ -63,7 +68,7 @@ class _AnasayfaState extends State<Anasayfa> {
                 ),
                 SizedBox(
                   width: ekranGenislik * 0.7,
-                  height: ekranYukseklik * 0.1,
+                  height: ekranYukseklik * 0.07,
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
@@ -80,10 +85,10 @@ class _AnasayfaState extends State<Anasayfa> {
                       style: TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFC78FF37A),
+                        backgroundColor: AppColors.color2,
                         foregroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30))),
+                            borderRadius: BorderRadius.circular(18))),
                   ),
                 ),
                 SizedBox(
@@ -91,7 +96,7 @@ class _AnasayfaState extends State<Anasayfa> {
                 ),
                 SizedBox(
                   width: ekranGenislik * 0.7,
-                  height: ekranYukseklik * 0.1,
+                  height: ekranYukseklik * 0.07,
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
@@ -108,10 +113,10 @@ class _AnasayfaState extends State<Anasayfa> {
                       style: TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF4EE2927A),
+                        backgroundColor: const Color.fromARGB(255, 107, 65, 65),
                         foregroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30))),
+                            borderRadius: BorderRadius.circular(18))),
                   ),
                 ),
                 SizedBox(
@@ -119,7 +124,7 @@ class _AnasayfaState extends State<Anasayfa> {
                 ),
                 SizedBox(
                   width: ekranGenislik * 0.7,
-                  height: ekranYukseklik * 0.1,
+                  height: ekranYukseklik * 0.07,
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
@@ -136,18 +141,18 @@ class _AnasayfaState extends State<Anasayfa> {
                       style: TextStyle(color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFFFD2337A),
+                        backgroundColor: AppColors.color4,
                         foregroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30))),
+                            borderRadius: BorderRadius.circular(18))),
                   ),
                 ),
                 SizedBox(
-                  height: ekranYukseklik * 0.03,
+                  height: ekranYukseklik * 0.1,
                 ),
                 Image.asset(
                   "assets/images/cocuklarresim.png",
-                  height: ekranYukseklik * 0.2,
+                  height: ekranYukseklik * 0.5,
                   width: ekranGenislik * 0.9,
                 ),
               ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hicodechildrights/color.dart';
 import 'package:hicodechildrights/result/sonucsayfasi2.dart';
+
 class Ornek2 extends StatelessWidget {
   const Ornek2({super.key});
 
@@ -7,10 +9,14 @@ class Ornek2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Resimdeki 7 Farkı Bulunuz"),
-          centerTitle: true,
-          backgroundColor: Color(0xFFB566F2),
+          title: const Text('Resimdeki 7 Farkı Bul'),
           foregroundColor: Colors.white,
+          centerTitle: true,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: AppGradients.primaryGradient,
+            ),
+          ),
         ),
         body: Resim(500, "assets/images/resim2.jpg"));
   }

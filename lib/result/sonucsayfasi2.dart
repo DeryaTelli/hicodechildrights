@@ -27,14 +27,14 @@ class _Sonucsayfasi2State extends State<Sonucsayfasi2> {
         children: [
           Positioned.fill(
             child: Lottie.asset(
-              'assets/animation.json',
+              'assets/images/animation.json',
               fit: BoxFit.cover,
             ),
           ),
           Center(
             child: Container(
               width: MediaQuery.of(context).size.width * 0.8,
-              height: 230,
+              height: 280,
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.purple[100],

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hicodechildrights/anasayfa.dart';
 import 'package:hicodechildrights/color.dart';
 import 'package:hicodechildrights/puzzle_page.dart';
+import 'package:hicodechildrights/tahminanasayfa.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -40,7 +42,10 @@ class _HomePageState extends State<HomePage> {
                   icon: Icons.question_mark,
                   label: 'Tahmin Kartı',
                   onTap: () {
-                    print("Tahmin Kartı butonuna tıklandı");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Tahminanasayfa()),
+                    );
                   },
                   imageUrl: 'assets/images/zurafa.png',
                 ),
@@ -65,7 +70,10 @@ class _HomePageState extends State<HomePage> {
                   icon: Icons.build,
                   label: 'Resimler Arasındaki Fark',
                   onTap: () {
-                    print("Resimler Arasındaki Fark butonuna tıklandı");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Anasayfa()),
+                    );
                   },
                   imageUrl: 'assets/images/yilan.png',
                 ),
